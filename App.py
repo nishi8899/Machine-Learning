@@ -1,15 +1,13 @@
-%%writefile app.py
 import streamlit as st 
 from PIL import Image
 import pickle
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-model = pickle.load(open('/content/drive/My Drive/nishi_model.pkl', 'rb')) 
+model = pickle.load(open('nishi_model.pkl', 'rb')) 
 # Feature Scaling
-dataset = pd.read_csv('/content/drive/My Drive/main.csv')
+dataset = pd.read_csv('main.csv')
 # Extracting independent variable:
 X = dataset.iloc[:, [1,2,3,4,5,6,7]].values
 # Encoding the Independent Variable
